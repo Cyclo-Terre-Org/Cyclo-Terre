@@ -1,0 +1,3 @@
+reference,designation,sous_ensemble,quantite,type,matiere_ou_norme,fournisseur,alternative,prix_indicatif_chf,fichier
+P001,[EXEMPLE] Tube de cadre avant,cadre,1,fabrique,[MATIÈRE ET DIMENSIONS],[FOURNISSEUR],,,plans/P001-tube-cadre-avant.pdf
+P002,[EXEMPLE] Roue,roues,[N],commerce,[STANDARD],[FOURNISSEUR],[ALTERNATIVE],,
