@@ -1,10 +1,7 @@
 # Contribuer au Cyclo-Terre
 
 Merci de votre intérêt. Le Cyclo-Terre se développe avec celles et ceux qui le construisent et
-l'utilisent : un retour de terrain vaut autant qu'une modification des plans.
-
-Pas besoin de connaître GitHub pour participer : vous pouvez aussi écrire à
-contact@cyclo-terre.ch.
+l'utilisent : que ce soit un retour de terrain, une modification des plans ou un nouvel outil à proposer, vous êtes au bon endroit.
 
 ## Les façons de contribuer
 
