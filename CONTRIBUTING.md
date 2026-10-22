@@ -8,12 +8,17 @@ contact@cyclo-terre.ch.
 
 ## Les façons de contribuer
 
+Du plus simple au plus engagé ; les deux premières lignes ne demandent aucun compte.
+
 | Vous voulez… | Comment |
 | --- | --- |
+| Poser une question, partager une construction ou une idée, sans compte | Écrire à contact@cyclo-terre.ch |
+| Poser une question ouverte à tous (« ça marche en sol argileux ? ») | [Discussions](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/discussions) |
 | Signaler une erreur dans les plans, une pièce introuvable, une casse | [Ouvrir un signalement](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/issues/new?template=probleme.yml) |
 | Proposer une idée d'amélioration | [Ouvrir une proposition](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/issues/new?template=amelioration.yml) |
 | Montrer votre Cyclo-Terre, vos adaptations, vos mesures au champ | [Partager une construction](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/issues/new?template=construction.yml) |
-| Modifier vous-même les fichiers | Proposer une modification (ci-dessous) |
+| Corriger une faute ou une précision dans un guide | Bouton « Proposer une correction » en bas de chaque guide sur [cyclo-terre.ch](https://cyclo-terre.ch/outils/#construire), ou le crayon ✎ sur GitHub : l'éditeur en ligne prépare la proposition pour vous |
+| Modifier vous-même les plans ou la CAO | Proposer une modification (ci-dessous) |
 
 Avant d'ouvrir un sujet, regardez s'il n'existe pas déjà dans les
 [issues](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/issues).
@@ -47,7 +52,10 @@ Avant d'ouvrir un sujet, regardez s'il n'existe pas déjà dans les
 - Un seul tableau `nomenclature.csv`, une ligne par pièce. Préférez des pièces de vélo standard
   que l'on trouve partout ; indiquez au moins une alternative quand c'est possible.
 
-### Documentation (`assemblage/`, README)
+### Documentation (`utilisation/`, `assemblage/`, README)
+- Ces guides sont affichés tels quels sur cyclo-terre.ch : un fichier = une page. Le titre est la
+  première ligne `# …`. Le `README.md` d'un dossier en est le sommaire.
+- Liens entre guides et images : chemins relatifs (`entretien.md`, `images/03-transmission.jpg`).
 - Markdown, en français, phrases courtes, une action par étape.
 - Une photo ou un schéma par étape, dans `assemblage/images/`, en JPEG ou PNG, 2000 px de large au
   plus. Décrivez chaque image (texte alternatif).
@@ -56,6 +64,10 @@ Avant d'ouvrir un sujet, regardez s'il n'existe pas déjà dans les
 - Numérotation `vMAJEUR.MINEUR` : majeur quand une pièce n'est plus compatible avec la version
   précédente, mineur pour le reste.
 - Toute modification est notée dans [CHANGELOG.md](CHANGELOG.md).
+- Publier une version : créer l'étiquette (`git tag v1.0 && git push origin v1.0`, ou
+  « Releases → Draft a new release » sur GitHub). Une automatisation génère alors les PDF des guides,
+  les archives des plans et de la CAO et la nomenclature, les joint à la version et met à jour
+  cyclo-terre.ch.
 
 ## Licence de vos contributions
 

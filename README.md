@@ -33,13 +33,14 @@ Site du projet et formations : [cyclo-terre.ch](https://cyclo-terre.ch)
 | [`cao/`](cao/) | Fichiers CAO sources et exports STEP |
 | [`plans/`](plans/) | Plans cotés (PDF) et fichiers de découpe (DXF) |
 | [`nomenclature/`](nomenclature/) | Liste des pièces, quantités, matières et fournisseurs |
+| [`utilisation/`](utilisation/) | Manuel d'utilisation et d'entretien, sécurité |
 | [`assemblage/`](assemblage/) | Instructions de montage pas à pas, réglages, contrôles |
 | [`outils/`](outils/) | Un dossier par outil (sarcloir, semoir…), avec la même organisation |
 | [`CHANGELOG.md`](CHANGELOG.md) | Ce qui change d'une version à l'autre |
 
 ## Par où commencer
 
-1. Lisez les [limites d'usage et consignes de sécurité](assemblage/README.md#sécurité).
+1. Lisez les [limites d'usage et consignes de sécurité](utilisation/securite.md).
 2. Rassemblez les pièces de la [nomenclature](nomenclature/).
 3. Suivez les [instructions d'assemblage](assemblage/).
 4. Vous avez construit un Cyclo-Terre ? [Partagez-le](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/issues/new?template=construction.yml) : vos retours font évoluer les plans.
@@ -47,10 +48,18 @@ Site du projet et formations : [cyclo-terre.ch](https://cyclo-terre.ch)
 Outillage nécessaire pour la construction : [À COMPLÉTER — par exemple poste à souder TIG, scie à
 ruban, perceuse à colonne, outillage vélo].
 
+## Télécharger sans GitHub
+
+Chaque version publiée ([Releases](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/releases)) contient
+les plans, la nomenclature et les guides en PDF. Ils sont aussi proposés sur
+[cyclo-terre.ch](https://cyclo-terre.ch/outils/#construire), où les guides se lisent en ligne.
+
 ## Contribuer
 
-Signaler un problème, proposer une amélioration, partager votre construction ou votre adaptation à
-votre sol : tout est expliqué dans le [guide de contribution](CONTRIBUTING.md).
+Une question ? Les [discussions](https://github.com/Cyclo-Terre-Org/Cyclo-Terre/discussions) sont
+ouvertes à tous. Signaler un problème, proposer une amélioration, partager votre construction : tout
+est expliqué dans le [guide de contribution](CONTRIBUTING.md). Vous pouvez aussi simplement écrire à
+contact@cyclo-terre.ch.
 
 ## Licences
 

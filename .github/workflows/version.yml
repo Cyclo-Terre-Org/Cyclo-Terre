@@ -1,0 +1,66 @@
+# Publication d'une version des plans.
+# Déclenchée par une étiquette vX.Y (git tag v1.0 && git push origin v1.0, ou « Draft a new release »).
+# Produit les fichiers à télécharger, les joint à la version GitHub, puis demande au site
+# cyclo-terre.ch de se mettre à jour.
+name: Publier une version
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ github.ref_name }}
+      # Jeton GitHub (fine-grained) avec « Contents : Read and write » sur Jungo-Phi/cyclo-terre,
+      # enregistré dans Settings → Secrets and variables → Actions → SITE_DISPATCH_TOKEN.
+      SITE_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Installer Pandoc et WeasyPrint
+        run: sudo apt-get update && sudo apt-get install -y pandoc weasyprint
+
+      - name: Guides en PDF
+        run: |
+          mkdir -p sortie
+          for dossier in utilisation assemblage; do
+            [ -f "$dossier/README.md" ] || continue
+            # Ordre : le README, puis les guides dans l'ordre où il les cite, puis les autres.
+            cites=$(grep -oE '\]\([^)#]+\.md\)' "$dossier/README.md" | sed -E 's/^\]\(//; s/\)$//' | awk '!vu[$0]++' | sed "s|^|$dossier/|")
+            autres=$(ls $dossier/*.md | grep -v README.md | grep -vxF -f <(printf '%s\n' $cites) || true)
+            fichiers="$dossier/README.md $cites $autres"
+            pandoc $fichiers --standalone --resource-path="$dossier" \
+              --metadata title="Cyclo-Terre $VERSION — $dossier" --metadata lang=fr \
+              --css .github/pdf.css --pdf-engine=weasyprint \
+              -o "sortie/cyclo-terre-$dossier-$VERSION.pdf"
+          done
+
+      - name: Plans, CAO et nomenclature
+        run: |
+          [ -d plans ] && (cd plans && zip -qr "../sortie/cyclo-terre-plans-$VERSION.zip" . -x README.md) || true
+          [ -d cao ] && (cd cao && zip -qr "../sortie/cyclo-terre-cao-$VERSION.zip" . -x README.md) || true
+          [ -f nomenclature/nomenclature.csv ] && cp nomenclature/nomenclature.csv "sortie/cyclo-terre-nomenclature-$VERSION.csv" || true
+          ls -la sortie
+
+      - name: Publier la version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            gh release upload "$VERSION" sortie/* --clobber
+          else
+            gh release create "$VERSION" sortie/* --title "Cyclo-Terre $VERSION" --generate-notes --verify-tag
+          fi
+
+      - name: Mettre à jour cyclo-terre.ch
+        if: env.SITE_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+        run: gh api repos/Jungo-Phi/cyclo-terre/dispatches -f event_type=nouvelle-version

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Poser une question
+    url: https://github.com/Cyclo-Terre-Org/Cyclo-Terre/discussions
+    about: Une question ouverte, une idée à discuter avant d'ouvrir un signalement.
+  - name: Écrire à l'équipe
+    url: mailto:contact@cyclo-terre.ch
+    about: Pour une question qui ne concerne pas directement les plans.
+  - name: Formations et site du projet
+    url: https://cyclo-terre.ch
+    about: Formations agricoles et mécaniques, actualités du projet.

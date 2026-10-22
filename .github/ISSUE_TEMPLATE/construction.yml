@@ -1,0 +1,34 @@
+name: Partager une construction
+description: Vous avez construit ou adapté un Cyclo-Terre ? Montrez-le.
+title: "[Construction] "
+labels: [construction]
+body:
+  - type: input
+    id: lieu
+    attributes:
+      label: Où (région, pays)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version des plans utilisée
+      placeholder: v0.1
+  - type: textarea
+    id: usage
+    attributes:
+      label: Votre usage
+      description: Type de sol, cultures, surface, largeur de planches.
+  - type: textarea
+    id: modifications
+    attributes:
+      label: Vos modifications
+      description: Ce que vous avez changé par rapport aux plans, et pourquoi. Un lien vers vos fichiers si vous les publiez.
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos
+  - type: textarea
+    id: retours
+    attributes:
+      label: Ce qui marche, ce qui ne marche pas

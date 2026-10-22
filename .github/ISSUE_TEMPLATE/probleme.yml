@@ -1,0 +1,36 @@
+name: Signaler un problème
+description: Erreur dans un plan, pièce introuvable, casse ou défaut constaté.
+title: "[Problème] "
+labels: [probleme]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version des plans
+      placeholder: v0.1
+    validations:
+      required: true
+  - type: input
+    id: piece
+    attributes:
+      label: Pièce ou sous-ensemble concerné
+      placeholder: "P012 patte porte-outil, transmission…"
+  - type: textarea
+    id: description
+    attributes:
+      label: Ce qui se passe
+      description: Ce que vous avez constaté, dans quelles conditions (sol, charge, pente).
+    validations:
+      required: true
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos ou mesures
+      description: Glissez vos images ici.
+  - type: dropdown
+    id: securite
+    attributes:
+      label: Le problème touche-t-il à la sécurité ?
+      options: ["Non", "Oui (freinage, cadre, attelage…)", "Je ne sais pas"]
+    validations:
+      required: true

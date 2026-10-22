@@ -1,0 +1,14 @@
+/* Mise en page des guides PDF (couleurs et polices du design system Cyclo-Terre). */
+@page { size: A4; margin: 20mm 18mm; @bottom-right { content: counter(page); font: 9pt monospace; color: #4D5350; } }
+body { font-family: "Source Sans 3", "Segoe UI", sans-serif; font-size: 11pt; line-height: 1.5; color: #1F2321; }
+h1, h2, h3 { font-family: "Barlow Semi Condensed", "Arial Narrow", sans-serif; line-height: 1.1; }
+h1 { font-size: 26pt; page-break-before: always; }
+h1:first-of-type { page-break-before: avoid; }
+h2 { font-size: 16pt; margin-top: 1.4em; }
+header#title-block-header { display: none; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 4pt 6pt; border-bottom: 0.5pt solid #C9BFAA; }
+img { max-width: 100%; }
+code, pre { font-family: "IBM Plex Mono", monospace; font-size: 9.5pt; }
+blockquote { margin: 0; padding: 6pt 10pt; background: #EDE6D8; }
+a { color: #1F2321; }

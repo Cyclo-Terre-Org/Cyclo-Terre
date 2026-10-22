@@ -1,0 +1,8 @@
+# Fichiers CAO volumineux : stockés avec Git LFS (https://git-lfs.com).
+# Installer Git LFS (`git lfs install`) avant le premier ajout de ces fichiers.
+*.step filter=lfs diff=lfs merge=lfs -text
+*.stp filter=lfs diff=lfs merge=lfs -text
+*.f3d filter=lfs diff=lfs merge=lfs -text
+*.FCStd filter=lfs diff=lfs merge=lfs -text
+*.sldprt filter=lfs diff=lfs merge=lfs -text
+*.sldasm filter=lfs diff=lfs merge=lfs -text

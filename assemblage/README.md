@@ -4,15 +4,10 @@ Instructions de montage du Cyclo-Terre — licence [CC BY-SA 4.0](../LICENSE.md)
 
 > Prototype v0.1 : ces instructions sont en cours de rédaction.
 
-## Sécurité
-
-- Charge utile maximale : 250 kg, répartie sur le porte-charge. [À VALIDER]
-- Pente maximale en charge : [À MESURER].
-- Avant chaque sortie : contrôler les freins, le serrage des roues et de l'attache porte-outil.
-- Le Cyclo-Terre n'est pas homologué pour la circulation routière. [À VÉRIFIER selon le pays et la
-  version à assistance électrique]
-
 ## Avant de commencer
+
+Lisez d'abord les [consignes de sécurité](../utilisation/securite.md).
+
 
 - Pièces : toutes les lignes de la [nomenclature](../nomenclature/).
 - Outillage : [À COMPLÉTER].

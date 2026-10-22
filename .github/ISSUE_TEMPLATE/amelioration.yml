@@ -1,0 +1,24 @@
+name: Proposer une amélioration
+description: Une idée pour améliorer la machine, un outil ou la documentation.
+title: "[Proposition] "
+labels: [amelioration]
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Le besoin
+      description: Quel problème cela résout-il, au champ ou à l'atelier ?
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Votre proposition
+      description: Croquis, photos ou fichiers bienvenus.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibilite
+    attributes:
+      label: Compatibilité
+      description: Les machines déjà construites peuvent-elles être modifiées ?
